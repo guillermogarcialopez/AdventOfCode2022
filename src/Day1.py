@@ -1,7 +1,7 @@
 import numpy as np
 
 
-'''******** Day 1 ********'''
+'''******** Part One ********'''
 ##Open file
 f = open("../files/Day1.txt", "r").read()
 
@@ -21,4 +21,11 @@ for food in foods:
 totalByElf = [sum(np.array(elf)) for elf in calories ]
 
 print("Total by elf: " + str(max(totalByElf)))
-##print(max(totalByElf))
+
+
+'''******** Part Two ********'''
+totalByElfSorted = np.sort(np.array(totalByElf))
+firstElf, secondElf, thirdElf = totalByElfSorted[-1], totalByElfSorted[-2], totalByElfSorted[-3]
+topThreeTotal = firstElf + secondElf + thirdElf
+
+print("Top three total calories: " + str(topThreeTotal))
